@@ -3,17 +3,24 @@
     <head>
         <title>Musical Friends</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		#map {
+			height: 700px;
+			width: 50%;
+		}
+	</style>
     </head>
     <body>
 	<div class="form-group">
 		<h1>Email:</h1> <input id=email type=text name="emailname"/>
 		<button id=gobutt type="button" class="btn btn-warning">GO</button>
-        </div>
 	<hr/>
+		<h3>Map</h3>
+	</div>
 	<div id="map"></div>
 	<script>
 		function initMap() {
-			var area = {lat: 43.3111, lng: 91.8063};
+			var area = {lat: 43.3111, lng: -91.8063};
 			var map = new google.maps.Map(document.getElementById('map'), {
 				center: area,
 				zoom: 8
@@ -24,15 +31,9 @@
 			});
 		}
 	</script>
-<<<<<<< HEAD
 	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBsudh14sekjBt4woXDgX9qLghkAVb11I$callback=initMap"</script>
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApsYpGGFNXdKwRiXQ3PsNBYaChEOgrGx8&callback=initMap"</script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-=======
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBsudh14sekjBt4woXDgX9qLghkAVb11I$callback=initMap" async defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
->>>>>>> e8eefb376b744efef09029508923a345ecf87281
     </body>
 </html>
