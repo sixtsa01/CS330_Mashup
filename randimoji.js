@@ -1,19 +1,15 @@
-const bitmoji = require('./JSON/bitmoji.json');
-const comics = require('./JSON/comics.json');
+const comics = comics.json
 const args = process.argv;
 
 const randInt = max => Math.floor(Math.random() * max);
 
-// return the length of a json object
 const jLen = object => Object.keys(object).length;
 
-// convert a json object to string
 const jStr = object => JSON.stringify(object);
 
 function genColors(avatar, sex) {
 	let colors = [];
 	for (let i = 0; i < jLen(avatar[sex]['colors']); i++) {
-		// assign the current color a random value
 		let color = avatar[sex]['colors'][i][Object.keys(avatar[sex]['colors'][i])[0]];
 		colors.push(`"${color}":${randInt(16777216)}`);
 	}
@@ -57,8 +53,4 @@ function genUrl(avatar, sex) {
 	let url = `https://render.bitstrips.com//render/${comic}/316830037_16_s4-v1.png?pd2={${attributes}}&colours={${colors}}&body={${body}}&sex=${sex}&outfit=${outfit}&proportion=${proportion}&cropped="body"&scale=${scale}&style=4`;
 
 	return url;
-}
-
-if (args.length > 2 && args.length < 4) {
-	console.log(genUrl(bitmoji,args[2]));
 }
