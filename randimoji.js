@@ -51,3 +51,24 @@ function genUrl(avatar, sex) {
         console.log(url)
 	return url;
 }
+
+function clickedOn() {
+	let genArray = ["male", "female"];
+	let rand = genArray[Math.floor(Math.random() * genArray.length)]
+	let url = genUrl(bitmoji,rand)
+	return url;
+}
+
+function initMap() {
+        var area = {lat: 43.3111, lng: -91.8063};
+        var map = new google.maps.Map(document.getElementById('map'), {
+		center: area,
+                zoom: 8
+        });
+        var image = clickedOn();
+        var marker = new google.maps.Marker({
+		position: area,
+                map: map,
+                icon: image
+        });
+}
