@@ -1,6 +1,3 @@
-const comics = comics.json
-const args = process.argv;
-
 const randInt = max => Math.floor(Math.random() * max);
 
 const jLen = object => Object.keys(object).length;
@@ -41,7 +38,7 @@ function genBody(avatar, sex) {
 }
 
 function genUrl(avatar, sex) {
-	let comic = comics.imoji[randInt(comics.imoji.length)].comic_id;
+	let comic = data.imoji[randInt(data.imoji.length)].comic_id;
 	let attributes = genAttributes(avatar,sex);
 	let colors = genColors(avatar,sex);
 	let body = genBody(avatar,sex);
@@ -54,3 +51,5 @@ function genUrl(avatar, sex) {
 
 	return url;
 }
+
+console.log(genUrl(bitmoji, "male"))

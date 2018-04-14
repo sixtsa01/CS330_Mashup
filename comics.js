@@ -1,4 +1,4 @@
-{
+var data ={
     "imoji": [
       {
         "template_id": "7232",

@@ -1,4 +1,4 @@
-{
+var bitmoji = {
 	"male": {
 		"hair": [
 			{"cranium":"cranium_bm1","forehead":"forehead_bm1","hair_back":"hair_back_blank","hair_front":"hair_front_bm1","hairbottom":"hairbottom_blank"},
