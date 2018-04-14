@@ -52,4 +52,4 @@ function genUrl(avatar, sex) {
 	return url;
 }
 
-genUrl(bitmoji, "male")
+console.log(genUrl(bitmoji, "male"))
