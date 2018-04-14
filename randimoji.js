@@ -52,4 +52,8 @@ function genUrl(avatar, sex) {
 	return url;
 }
 
-console.log(genUrl(bitmoji, "male"))
+function onclick() {
+	let genArray = ["male", "female"];
+	let rand = genArray[Math.floor(Math.random() * genArray.length)]
+	let url = genUrl(bitmoji,rand)
+}
