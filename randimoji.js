@@ -48,8 +48,6 @@ function genUrl(avatar, sex) {
 	sex = avatar[sex]['sex'];
 
 	let url = `https://render.bitstrips.com//render/${comic}/316830037_16_s4-v1.png?pd2={${attributes}}&colours={${colors}}&body={${body}}&sex=${sex}&outfit=${outfit}&proportion=${proportion}&cropped="body"&scale=${scale}&style=4`;
-
+        console.log(url)
 	return url;
 }
-
-console.log(genUrl(bitmoji, "male"))
