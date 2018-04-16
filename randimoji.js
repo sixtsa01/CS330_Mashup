@@ -65,10 +65,12 @@ function initMap() {
 		center: area,
                 zoom: 8
         });
-        var image = clickedOn();
+	var image = clickedOn();
         var marker = new google.maps.Marker({
 		position: area,
                 map: map,
-                icon: image
+		icon: image,
+		width: 15,
+		height: 15
         });
 }
