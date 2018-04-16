@@ -70,7 +70,5 @@ function initMap() {
 		position: area,
                 map: map,
 		icon: image,
-		width: 15,
-		height: 15
         });
 }
