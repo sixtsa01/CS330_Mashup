@@ -77,7 +77,7 @@ function initMap() {
         var area = {lat: 43.3111, lng: -91.8063};
         map = new google.maps.Map(document.getElementById('map'), {
 		center: area,
-                zoom: 8
+                zoom: 15
 	});
 	return map
 }
