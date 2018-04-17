@@ -52,11 +52,32 @@ function genUrl(avatar, sex) {
 	return url;
 }
 
-function clickedOn() {
+function genImage() {
 	let genArray = ["male", "female"];
 	let rand = genArray[Math.floor(Math.random() * genArray.length)]
 	let url = genUrl(bitmoji,rand)
 	return url;
+}
+
+function clickedOn() {
+	FB.api(
+		"/me/feed",
+		{
+			"with": "location"
+		},
+		function (response) {
+			if (response && !response.error) {
+			/* handle the result */
+			}
+			console.log(response)
+		}
+	);
+	var image = genImage();
+        var marker = new google.maps.Marker({
+		position: area,
+                map: document.getElementById('map'),
+		icon: image,
+	});
 }
 
 function initMap() {
@@ -64,11 +85,5 @@ function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
 		center: area,
                 zoom: 8
-        });
-	var image = clickedOn();
-        var marker = new google.maps.Marker({
-		position: area,
-                map: map,
-		icon: image,
         });
 }
