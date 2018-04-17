@@ -61,21 +61,27 @@ function genImage() {
 
 function clickedOn() {
 	FB.api(
-		"/me/feed",
-		{
-			"with": "location"
-		},
-		function (response) {
-			if (response && !response.error) {
-			console.log(response.error)
-			}
+		'/100025431526199?fields=address?fields=latitude',
+		'GET',
+		{},
+		function(response) {
 			console.log(response)
+			var latitude = response
+		}
+	);
+	FB.api(
+		'/100025431526199?fields=address?fields=longitude',
+		'GET',
+		{},
+		function(response) {
+			console.log(response)
+			var longitude = response
 		}
 	);
 	var image = genImage();
         var marker = new google.maps.Marker({
-		position: {lat: 43.3111, lng: -91.8063},
-                map: document.getElementById('map'),
+		position: {lat: latitude, lng: longitude},
+		map: initMap(),
 		icon: image,
 	});
 }
@@ -85,5 +91,6 @@ function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
 		center: area,
                 zoom: 8
-        });
+	});
+	return map
 }
