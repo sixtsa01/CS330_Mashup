@@ -62,14 +62,15 @@ function clickedOn() {
 		function(response) {
 			console.log(response)
 			var gender = response.gender
+			var image = genUrl(bitmoji,gender);
+        		var marker = new google.maps.Marker({
+				position: {lat: 43.3111, lng: -91.8063},
+				map: map,
+				icon: image
+			});
+			
 		}
 	);
-	var image = genUrl(bitmoji,gender);
-        var marker = new google.maps.Marker({
-		position: {lat: 43.3111, lng: -91.8063},
-		map: map,
-		icon: image,
-	});
 }
 
 function initMap() {
