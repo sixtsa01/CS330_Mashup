@@ -46,7 +46,7 @@ function genUrl(avatar, sex) {
 	let body = genBody(avatar,sex);
 	let outfit = avatar[sex]['outfit'][randInt(avatar[sex]['outfit'].length)];
 	let proportion = avatar[sex]['proportion'][randInt(avatar[sex]['proportion'].length)];
-	let scale = 3;
+	let scale = 1;
 	sex = avatar[sex]['sex'];
 
 	let url = `https://render.bitstrips.com//render/${comic}/316830037_16_s4-v1.png?pd2={${attributes}}&colours={${colors}}&body={${body}}&sex=${sex}&outfit=${outfit}&proportion=${proportion}&cropped="body"&scale=${scale}&style=4`;
