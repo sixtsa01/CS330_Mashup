@@ -4,6 +4,8 @@ const jLen = object => Object.keys(object).length;
 
 const jStr = object => JSON.stringify(object);
 
+var map;
+
 function genColors(avatar, sex) {
 	let colors = [];
 	for (let i = 0; i < jLen(avatar[sex]['colors']); i++) {
@@ -52,43 +54,27 @@ function genUrl(avatar, sex) {
 	return url;
 }
 
-function genImage() {
-	let genArray = ["male", "female"];
-	let rand = genArray[Math.floor(Math.random() * genArray.length)]
-	let url = genUrl(bitmoji,rand)
-	return url;
-}
-
 function clickedOn() {
 	FB.api(
-		'/100025431526199?fields=address?fields=latitude',
+		'/me?fields=gender',
 		'GET',
 		{},
 		function(response) {
 			console.log(response)
-			var latitude = response
+			var gender = response.gender
 		}
 	);
-	FB.api(
-		'/100025431526199?fields=address?fields=longitude',
-		'GET',
-		{},
-		function(response) {
-			console.log(response)
-			var longitude = response
-		}
-	);
-	var image = genImage();
+	var image = genUrl(bitmoji,gender);
         var marker = new google.maps.Marker({
-		position: {lat: latitude, lng: longitude},
-		map: initMap(),
+		position: {lat: 43.3111, lng: -91.8063},
+		map: map,
 		icon: image,
 	});
 }
 
 function initMap() {
         var area = {lat: 43.3111, lng: -91.8063};
-        var map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
 		center: area,
                 zoom: 8
 	});
