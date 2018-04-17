@@ -67,14 +67,14 @@ function clickedOn() {
 		},
 		function (response) {
 			if (response && !response.error) {
-			/* handle the result */
+			console.log(response.error)
 			}
 			console.log(response)
 		}
 	);
 	var image = genImage();
         var marker = new google.maps.Marker({
-		position: area,
+		position: {lat: 43.3111, lng: -91.8063},
                 map: document.getElementById('map'),
 		icon: image,
 	});
